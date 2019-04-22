@@ -1,7 +1,8 @@
 import React from 'react';
-import Titles from "./components/titles"
-import Form from "./components/form"
-import Weather from "./components/weather"
+import Titles from "./components/titles";
+import Form from "./components/form";
+import Weather from "./components/weather";
+import Picture from "./components/picture";
 
 const Api_Key = "6c8af4cbc13ff086bb4744c23fa6fc75"
 
@@ -13,6 +14,7 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
+    icon: "02d",
     error: undefined
   }
 
@@ -36,6 +38,7 @@ class App extends React.Component {
         country: response.sys.country,
         humidity: response.main.humidity,
         description: response.weather[0].description,
+        icon: response.weather[0].icon,
         error: ""
       })
     }
@@ -59,6 +62,9 @@ class App extends React.Component {
           humidity={this.state.humidity}
           description={this.state.description}
           error={this.state.error} />
+        <Picture
+          icon={this.state.icon}
+        />
       </div>
     )
   }
