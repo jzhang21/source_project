@@ -14,7 +14,7 @@ class App extends React.Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    icon: "01d",
+    icon: "default",
     error: undefined
   }
 
